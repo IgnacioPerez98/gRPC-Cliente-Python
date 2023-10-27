@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option csharp_namespace = "ProyectoRedes.Protos";
+
+package usuarios;
+
+service Users {
+  rpc GetUsers (Empty) returns (UserList);
+}
+
+message Empty {}
+
+message UserList {
+  repeated User users = 1;
+}
+
+// Definition of a user.
+message User {
+  string id = 1;
+  string name = 2;
+  string curso = 3;
+}
